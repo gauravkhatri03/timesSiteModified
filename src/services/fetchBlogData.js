@@ -21,5 +21,6 @@ var getData = () => {
 }
 
 export function getBlogs () {
-    return getData();
+    var a = getData();
+    return a;
 }

@@ -12,5 +12,5 @@ Tasks Completed-
 2. Made the NavBar
     2.1 src>-components->NavBars->ExamplesNavbar.jsx (please note that IndexNavbar.jsx is not the NavBar to be used)
 3. Made a sample footer and is not the finalised footer. Just made it to go with DTU Times theme and think it of as just a prop footer
-4. Made a new folder named services which contains a js file for fetching blog data from api (currently it doesn't do anything and is for future reference)
+4. Made a new folder named services which contains a js file for fetching blog data from api (currently it doesn't do anything and is for future reference. cuurently only helps to show 5 sample blog posts)
     4.1 src->services

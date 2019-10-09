@@ -16,7 +16,7 @@ class Blog extends React.Component {
   componentDidMount() {
     document.body.classList.toggle("index-page");
     document.body.classList.toggle("profile-page");
-    this.setState({ blogPosts: [...getBlogs()] });
+    this.setState({ blogPosts: getBlogs() });
     // this.setState(blogPosts : [...getBlogPosts]);
   }
   componentWillUnmount() {
@@ -25,25 +25,19 @@ class Blog extends React.Component {
   }
 
   render() {
-    var blogPosts = this.state;
-    console.log(blogPosts);
+    var { blogPosts } = this.state;
     return (
       <>
         <ExamplesNavbar />
         <BlogHeader />
         <div className="wrapper">
-          {/* {blogPosts.map(post => {
+          {blogPosts.map(post => {
             return (
-               <div key={post["backText"]}> 
-              <BlogCard key={post["backText"]} backText={post["backText"]} />
+              <div key={post["backText"]}>
+                <BlogCard key={post["backText"]} backText={post["backText"]} />
               </div>
             );
-          })} */}
-          <BlogCard />
-          <BlogCard />
-          <BlogCard />
-          <BlogCard />
-          <BlogCard />
+          })}
           <Footer />
         </div>
       </>

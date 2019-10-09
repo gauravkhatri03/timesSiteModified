@@ -41,7 +41,7 @@ const BlogCard = props => {
           </Col>
           <Col md="5">
             <h1 className="profile-title text-left" style={{left:"20%"}}>Sample Blog Title</h1>
-            <h5 className="text-on-back">01</h5>
+            <h5 className="text-on-back">{backText}</h5>
             <p className="profile-description text-left">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque
               suscipit assumenda quasi nemo aut, quibusdam itaque laboriosam

@@ -3,6 +3,7 @@ import { Button, Container, Row, Col, UncontrolledTooltip } from "reactstrap";
 import ExamplesNavbar from "../../components/Navbars/ExamplesNavbar";
 import Footer from "../../components/Footer/FooterDemo";
 import BlogCard from "../../components/BlogPageComponents/BlogCard";
+import { getBlogs } from "../../services/fetchBlogData";
 let ps = null;
 
 class Blog2 extends React.Component {
@@ -17,6 +18,7 @@ class Blog2 extends React.Component {
   componentDidMount() {
     document.body.classList.toggle("index-page");
     document.body.classList.toggle("profile-page");
+    this.setState({ blogPosts: getBlogs() });
     // this.setState(blogPosts : [...getBlogPosts]);
   }
   componentWillUnmount() {
@@ -24,11 +26,15 @@ class Blog2 extends React.Component {
   }
 
   render() {
+    var { blogPosts } = this.state;
     return (
       <>
         <ExamplesNavbar />
         <div className="wrapper">
-          <div className="page-header" style={{ marginBottom: "7.1rem", height:"100%" }}>
+          <div
+            className="page-header"
+            style={{ marginBottom: "7.1rem", height: "100%" }}
+          >
             <img
               alt="..."
               className="dots"
@@ -97,11 +103,13 @@ class Blog2 extends React.Component {
             className="path"
             src={require("assets/img/blob.png")}
           />
-          <BlogCard />
-          <BlogCard />
-          <BlogCard />
-          <BlogCard />
-          <BlogCard />
+          {blogPosts.map(post => {
+            return (
+              <div key={post["backText"]}>
+                <BlogCard key={post["backText"]} backText={post["backText"]} />
+              </div>
+            );
+          })}
           <Footer />
         </div>
       </>
